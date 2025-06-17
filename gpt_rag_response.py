@@ -29,7 +29,7 @@ def get_context_from_pinecone(question, top_k=5):
 
     return "\n\n---\n\n".join(chunks)
 
-def ask_gpt(question, context, model="gpt-4"):
+def ask_gpt(question, context, model="gpt-4o"):
     system_prompt = (
         "You are an audit and risk assistant. Use the provided context "
         "to answer questions related to internal controls, risks, and planning. "
