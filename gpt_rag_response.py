@@ -31,10 +31,12 @@ def get_context_from_pinecone(question, top_k=5):
 
 def ask_gpt(question, context, model="gpt-4o"):
     system_prompt = (
-        "You are an audit and risk assistant. Use the provided context "
-        "to answer questions related to internal controls, risks, and planning. "
-        "If the context does not contain the answer, say you don’t know."
-    )
+    "You are an audit intelligence assistant. Users will ask about risk insights, domains, document types, and specific audit topics. "
+    "Each content chunk includes a Doc_ID, Domain, Document_Type, and free-form text. "
+    "You should extract relevant information, count document mentions, group by fields when asked, and summarize important risk notes. "
+    "Use only the content you’re given — do not guess. Only say 'I don’t know' if the context is completely unrelated."
+)
+
 
     full_prompt = f"Context:\n{context}\n\nQuestion:\n{question}"
 
