@@ -23,3 +23,7 @@ def query_audit_docs(request: QueryRequest):
 def ask_audit_gpt(request: QueryRequest):
     answer = query_audit_gpt(request.question, request.top_k)
     return {"answer": answer}
+# ✅ Route 3: Root health check for Render
+@app.get("/")
+def health_check():
+    return {"status": "ok"}
