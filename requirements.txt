@@ -3,4 +3,6 @@ uvicorn
 openai
 pinecone
 pydantic
+numpy
 # force redeploy
+
